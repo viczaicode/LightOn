@@ -18,6 +18,7 @@ export class JatekTer {
             this.#szuloElem.innerHTML = ``;
             this.megjelenit();
         });
+        this.ujJatekGomb();
 
      }
 
@@ -45,4 +46,17 @@ export class JatekTer {
         }
         
     }
+
+
+
+    ujJatekGomb(){
+        let gomb = document.querySelector(".ujJatek")
+        gomb.addEventListener("click", () => this.ujJatek());
+    }
+    ujJatek(){
+        this.#szuloElem.innerHTML = ``;
+        this.setAllapotLista();
+        this.megjelenit();
+    }
+
 }
