@@ -15,7 +15,7 @@ export class Lampa{
         }else{
             txt += `<div id="${this.#id}" class="gombok0"></div>`
         }
-        this.#szuloElem.append(txt)
+        this.#szuloElem.insertAdjacentHTML("beforeend", txt)
         this.#szuloElem.find(`#${this.#id}`).on("click", () => this.kattintasTrigger());
     }
     setAllapot(){
