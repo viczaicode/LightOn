@@ -31,7 +31,15 @@ export class Lampa{
 
     kattintasTrigger(esemenyNev){
         const e = new CustomEvent(esemenyNev, {detail:this.#id})
+        const f = new CustomEvent(esemenyNev, {detail:this.#id-1})
+        const g = new CustomEvent(esemenyNev, {detail:this.#id+1})
+        const h = new CustomEvent(esemenyNev, {detail:this.#id+3})
+        const i = new CustomEvent(esemenyNev, {detail:this.#id-3})
         window.dispatchEvent(e);
+        window.dispatchEvent(f);
+        window.dispatchEvent(g);
+        window.dispatchEvent(h);
+        window.dispatchEvent(i);
 
     }
 }

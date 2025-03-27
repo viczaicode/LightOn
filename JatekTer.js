@@ -73,6 +73,7 @@ export class JatekTer {
         this.#szuloElem.innerHTML = ``;
         this.setAllapotLista();
         this.megjelenit();
+        this.szamlaloMegjelenit();
     }
 
 }
