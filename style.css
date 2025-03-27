@@ -1,3 +1,10 @@
+*{
+    box-sizing: border-box;
+    color: white;
+    text-align: center;
+}
+
+
 body{
     width: 70%;
     max-width: 1200px;
@@ -8,6 +15,18 @@ body{
     background-size: 200% 200%;
     height: 100vh;
     animation: color 10s ease-in-out infinite;
+}
+
+#jatekter{
+
+
+}
+
+h1{
+    font-size: 45px;
+    text-decoration: underline;
+    letter-spacing: 3px;
+    text-shadow: 3px 3px 3px rgb(0, 255, 0), -3px -3px 3px rgb(255, 0, 212);
 }
 
 #jatekter{
@@ -39,19 +58,54 @@ body{
 }
 
 .gomb{
-    padding-left: 90px;
+    padding: 20px;
+}
+
+.ujJatek {
+    color: black;
+    border-radius: 15px;
+    border-bottom-color: white;
+    border-top-color: white;
+    border-left-color: rgb(255, 0, 212);
+    border-right-color:  rgb(0, 255, 0);
+    box-shadow: 0 0 5px aliceblue, 0 0 10px aliceblue, 0 0 20px rgb(255, 0, 212);
+    padding: 10px;
+  }
+
+.ujJatek:hover{
+    border-bottom-color: white;
+    border-top-color: white;
+    border-left-color: rgb(0, 255, 0);
+    border-right-color:  rgb(255, 0, 212);
+    transform: scale(1.2);
+    border-image: linear-gradient(rgb(255, 0, 212), white, white, white rgb(0, 255, 0)) 1;
+    animation: color 10s ease-in-out infinite;
+}
+
+p{
+    font-size: 20px;
+}
+
+footer{
+    text-decoration: overline;
+    font-size: 20px;
 }
 
 @keyframes color{
     0%{
         background-position: 0 50%;
+        border-image: linear-gradient(rgb(255, 0, 212), white, white, white rgb(0, 255, 0)) 1;
+        box-shadow: 0 0 5px aliceblue, 0 0 10px aliceblue, 0 0 20px rgb(255, 0, 212);
 
     }
     50%{
         background-position: 100% 50%;
-
+        border-image: linear-gradient(rgb(0, 255, 0), white, white, white rgb(255, 0, 212)) 1;
+        box-shadow: 0 0 5px rgb(0, 255, 0), 0 0 10px rgb(0, 255, 0), 0 0 20px rgb(255, 0, 212);
     }
     100%{
         background-position: 0 50%;
+        border-image: linear-gradient(rgb(255, 0, 212), white, white, white rgb(0, 255, 0)) 1;
+        box-shadow: 0 0 5px aliceblue, 0 0 10px aliceblue, 0 0 20px rgb(255, 0, 212);
     }
 }
