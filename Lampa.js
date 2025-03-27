@@ -6,9 +6,9 @@ export class Lampa{
         this.#id = id
         this.#allapot = allapot
         this.#szuloElem = szuloElem
-        this.#megjelenit();
+        this.megjelenit();
     }
-    #megjelenit(){
+    megjelenit(){
         let txt = ""
         if(this.#allapot === true){
             txt += `<div id="${this.#id}" class="gombok1"></div>`
@@ -16,13 +16,13 @@ export class Lampa{
             txt += `<div id="${this.#id}" class="gombok0"></div>`
         }
         this.#szuloElem.append(txt)
-        this.#szuloElem.find(`#${this.#id}`).on("click", () => this.#kattintasTrigger());
+        this.#szuloElem.find(`#${this.#id}`).on("click", () => this.kattintasTrigger());
     }
-    #setAllapot(){
-        this.#allapot = true;  // Csak akkor változtatjuk meg, ha sárga
-        this.#szinBeallit();
+    setAllapot(){
+        this.#allapot = true; 
+        this.szinBeallit();
     }
-    #szinBeallit(){
+    szinBeallit(){
         const elem = this.#szuloElem.find(`#${this.#id}`);
         if(this.#allapot){
             elem.removeClass("gombok0").addClass("gombok1");
@@ -30,9 +30,9 @@ export class Lampa{
             elem.removeClass("gombok1").addClass("gombok0");
         }
     }
-    #kattintasTrigger(){
-        if(!this.#allapot){ // Csak akkor állítjuk be, ha most sárga (kikapcsolt)
-            this.#setAllapot();
+    kattintasTrigger(){
+        if(!this.#allapot){ 
+            this.setAllapot();
         }
     }
 }
