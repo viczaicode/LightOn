@@ -1,7 +1,8 @@
 import { Lampa } from "./Lampa.js";
 
-export class JatekTer {
 
+export class JatekTer {
+     #szam
      #allapotLista
      #meret
      #szuloElem;
@@ -9,6 +10,7 @@ export class JatekTer {
      constructor(szuloElem) {
         this.#allapotLista = [];
         this.#meret = 3;
+        this.#szam = 0;
         this.setAllapotLista();
         this.#szuloElem = szuloElem;
         this.megjelenit();
@@ -17,9 +19,10 @@ export class JatekTer {
             this.lepes(id);
             this.#szuloElem.innerHTML = ``;
             this.megjelenit();
+            this.szamlaloMegjelenit();
         });
         this.ujJatekGomb();
-
+        this.szamlaloMegjelenit();
      }
 
     setAllapotLista(){
@@ -47,7 +50,20 @@ export class JatekTer {
         
     }
 
-
+    szamlaloMegjelenit(){
+        const infoElem = document.getElementById("szamlalo")
+        infoElem.innerHTML = ``;
+        this.#szam = 0;
+        for (let index = 0; index < this.#allapotLista.length; index++) {
+            if (this.#allapotLista[index] == false) {
+                this.#szam++;
+            }
+        }
+        let text = `
+                <p>A lekapcsolt lámpák száma</p>
+                <p>${this.#szam}</p>`
+        infoElem.insertAdjacentHTML("beforeend", text)
+    }
 
     ujJatekGomb(){
         let gomb = document.querySelector(".ujJatek")

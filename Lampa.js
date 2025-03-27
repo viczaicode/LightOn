@@ -1,3 +1,5 @@
+import Info from "./Info.js";
+
 export class Lampa{
     #allapot
     #id
