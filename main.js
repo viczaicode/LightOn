@@ -1,3 +1,4 @@
 import { JatekTer } from "./JatekTer.js";
 
-let ujJatek = new JatekTer();
+const jatekterElem = document.getElementById("jatekter")
+new JatekTer(jatekterElem);

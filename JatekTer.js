@@ -4,12 +4,20 @@ export class JatekTer {
 
      #allapotLista
      #meret
+     #szuloElem;
 
-     constructor() {
+     constructor(szuloElem) {
         this.#allapotLista = [];
         this.#meret = 3;
         this.setAllapotLista();
+        this.#szuloElem = szuloElem;
         this.megjelenit();
+        window.addEventListener("lepes", (event)=>{
+            let id = event.detail;
+            this.lepes(id);
+            this.#szuloElem.innerHTML = ``;
+            this.megjelenit();
+        });
 
      }
 
@@ -25,16 +33,16 @@ export class JatekTer {
 
     megjelenit() {
         for (let index = 0; index < this.#allapotLista.length; index++) {
-            const Lampaa = new Lampa(this.#allapotLista[index], index, this.#allapotLista, document.getElementById("jatekter"));
+            const LAMPA = new Lampa(index, this.#allapotLista[index], document.getElementById("jatekter"));
             
             
         }
     }
 
-
-
-
-
-
-
+    lepes(id) {
+        if (this.#allapotLista[id] === false) {
+            this.#allapotLista[id] = true;
+        }
+        
+    }
 }
